@@ -34,5 +34,11 @@ public class Operateur implements Serializable{
 	@OneToMany
 	@JsonIgnore
 	private Set<Facture> factures;
+	public Set<Facture> getFactures() {
+		return factures;
+	}
+	public void setFactures(Set<Facture> factures) {
+		this.factures = factures;
+	}
 	
 }

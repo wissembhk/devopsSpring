@@ -36,6 +36,12 @@ public class Produit implements Serializable {
 	private float prix;
 	@Temporal(TemporalType.DATE)
 	private Date dateCreation;
+	public Stock getStock() {
+		return stock;
+	}
+	public void setStock(Stock stock) {
+		this.stock = stock;
+	}
 	@Temporal(TemporalType.DATE)
 	private Date dateDerniereModification;
 	@ManyToOne

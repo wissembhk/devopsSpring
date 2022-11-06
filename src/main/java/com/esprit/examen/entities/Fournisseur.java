@@ -38,7 +38,13 @@ public class Fournisseur implements Serializable {
 	@OneToMany(mappedBy="fournisseur")
 	@JsonIgnore
 	private Set<Facture> factures;
-    @ManyToMany
+    public Set<Facture> getFactures() {
+		return factures;
+	}
+	public void setFactures(Set<Facture> factures) {
+		this.factures = factures;
+	}
+	@ManyToMany
     @JsonIgnore
     private Set<SecteurActivite> secteurActivites;
     @OneToOne(cascade= CascadeType.ALL,fetch=FetchType.EAGER)
