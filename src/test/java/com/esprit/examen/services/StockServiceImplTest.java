@@ -68,6 +68,7 @@ class stock {
     void testDeletestock() {
         Service.deleteStock(stock.getIdStock());
         Mockito.verify(Repo, Mockito.times(1)).deleteById(stock.getIdStock());
+        System.out.println("aaaa");
     }
 
 

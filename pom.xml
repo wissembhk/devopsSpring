@@ -77,6 +77,13 @@
 			<artifactId>spring-boot-devtools</artifactId>
 		</dependency>
 	</dependencies>
+	<distributionManagement>
+        <repository>
+            <id>deploymentRepo</id>
+            <name>Nexus Repository</name>
+            <url>http://44.212.25.105:8081/repository/maven-releases/</url>
+        </repository>
+    </distributionManagement>
 
 	<build>
 		<plugins>
