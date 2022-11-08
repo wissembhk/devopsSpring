@@ -2,10 +2,10 @@
 FROM node:latest as build
 
 # Set the working directory
-WORKDIR /usr/local/app
+WORKDIR ./
 
 # Add the source code to app
-COPY ./ /usr/local/app/
+#COPY ./ /usr/local/app/
 
 # Install all the dependencies
 RUN npm install --force
@@ -20,7 +20,7 @@ RUN npm run build
 FROM nginx:latest
 
 # Copy the build output to replace the default nginx contents.
-COPY --from=build /dist/crudtuto-Front /usr/share/nginx/html
+COPY --from=build ./ /usr/share/nginx/html
 
 # Expose port 80
 EXPOSE 4200
