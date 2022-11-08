@@ -1,17 +1,6 @@
 version: "3.3"
 
 services:
-  mysqldb:
-    image: mysql:5.7
-    restart: unless-stopped
-    env_file: ./spring/.env
-    environment:
-      - MYSQL_ROOT_PASSWORD="root"
-      - MYSQL_DATABASE=3306
-    ports:
-      - 3306:3306
-    volumes:
-      - db:/var/lib/mysql
  
   angular:
     build: 
