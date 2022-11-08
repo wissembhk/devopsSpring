@@ -1,6 +1,8 @@
-FROM nginx:1.15.8
-EXPOSE 4200
-COPY nginx.conf /etc/nginx/conf.d/
-RUN rm -rf /usr/share/nginx/html/
-COPY --from=builder /dist/crudtuto-Front /var/www/html/
-CMD ["nginx", "-g", "daemon off;"]
+FROM node:latest as node 
+WORKDIR /app
+COPY . . 
+RUN npm install
+RUN npm run build --prod
+
+FROM nginx:alpine
+COPY --from=node /app/dist/crudtuto-Front /usr/share/nginx/html
