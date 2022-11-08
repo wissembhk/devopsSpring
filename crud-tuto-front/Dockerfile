@@ -7,7 +7,7 @@ COPY . .
 
 # Stage 2
 FROM nginx:alpine
+CMD ["npm","run","ng","build"] 
 
 COPY --from=node /app/dist/crudtuto-Front /usr/share/nginx/html
-CMD ["npm","run"."ng build"] 
-CMD ["npm","run"."ng serve"]
+CMD ["npm","run","ng","serve"]
