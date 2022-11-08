@@ -17,9 +17,9 @@ services:
       - mysqldb
     build:
       context: "spring"
-      dockerfile: "./spring/Dockerfile"
+      dockerfile: "./Dockerfile"
     restart: on-failure
-    env_file: ./spring/.env
+    env_file: ./.env
     ports:
       - 8089:8089
     environment:
@@ -36,7 +36,7 @@ services:
   angular:
     build: 
       context : "crud-tuto-front"
-      dockerfile: "./crud-tutp-front/Dockerfile"
+      dockerfile: "./Dockerfile"
     container_name: angular
     ports:
       - 4200:4200
