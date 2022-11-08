@@ -16,7 +16,7 @@ services:
     depends_on:
       - mysqldb
     build:
-      context: "./spring"
+      context: "./spring/"
       dockerfile: "Dockerfile"
     restart: on-failure
     env_file: ./spring/.env
@@ -35,7 +35,7 @@ services:
     tty: true
   angular:
     build: 
-      context : "./crud-tuto-front"
+      context : "./crud-tuto-front/"
       dockerfile: "Dockerfile"
     container_name: angular
     ports:
