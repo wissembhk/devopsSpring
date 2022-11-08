@@ -3,8 +3,8 @@
 FROM node:14.15.4 as node
 WORKDIR /app
 COPY . .
-CMD ['npm','install'] 
-CMD ['npm','start'] 
+CMD ["npm","run ng build"] 
+CMD ["npm","run ng serve"] 
 # Stage 2
 FROM nginx:alpine
 
