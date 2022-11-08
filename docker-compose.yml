@@ -2,9 +2,10 @@ version: "3.3"
 
 services:
  
+   
   angular:
     build: 
-      context : "crud-tuto-front"
+      context : "spring/crud-tuto-front"
       dockerfile: "Dockerfile"
     container_name: angular
     ports:
