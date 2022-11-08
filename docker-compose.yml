@@ -1,14 +1,17 @@
 version: "3.3"
 
 services:
- 
-   
-  angular:
-    build: 
-      context : "crud-tuto-front"
-      dockerfile: "crud-tuto-front/Dockerfile"
-    container_name: angular
+  mysqldb:
+    image: mysql:5.7
+    restart: unless-stopped
+    env_file: ./spring/.env
+    environment:
+      - MYSQL_ROOT_PASSWORD="root"
+      - MYSQL_DATABASE=3306
     ports:
-      - 4200:4200
+      - 3306:3306
+    volumes:
+      - db:/var/lib/mysql
+  
 volumes:
   db:
