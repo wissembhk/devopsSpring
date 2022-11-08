@@ -5,8 +5,8 @@ services:
    
   angular:
     build: 
-      context : "spring/crud-tuto-front"
-      dockerfile: "Dockerfile"
+      context : "crud-tuto-front"
+      dockerfile: "crud-tuto-front/Dockerfile"
     container_name: angular
     ports:
       - 4200:4200
