@@ -3,8 +3,8 @@
 FROM node:14.15.4 as node
 WORKDIR /app
 COPY . .
-RUN npm install
-RUN npm run build --prod
+CMD ['npm','install'] 
+CMD ['npm','start'] 
 # Stage 2
 FROM nginx:alpine
 
