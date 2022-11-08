@@ -10,7 +10,7 @@ COPY ./package-lock.json /usr/local/app/
 
 # Install all the dependencies
 RUN cd /usr/local/app/
-RUN npm install
+RUN npm install --force
 
 # Generate the build of the application
 RUN npm run build
