@@ -12,27 +12,7 @@ services:
       - 3306:3306
     volumes:
       - db:/var/lib/mysql
-  app:
-    depends_on:
-      - mysqldb
-    build:
-      context: "spring"
-      dockerfile: "Dockerfile"
-    restart: on-failure
-    env_file: ./spring/.env
-    ports:
-      - 8089:8089
-    environment:
-      SPRING_APPLICATION_JSON: '{
-        "spring.datasource.url"  : "jdbc:mysql://mysqldb:3306/tpstock?useSSL=false",
-        "spring.datasource.username" : "root",
-        "spring.datasource.password" : "root",
-        "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL5InnoDBDialect",
-        "spring.jpa.hibernate.ddl-auto" : "update"}'
-    volumes:
-      - .m2:/root/.m2
-    stdin_open: true
-    tty: true
+ 
   angular:
     build: 
       context : "crud-tuto-front"
