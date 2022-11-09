@@ -3,7 +3,7 @@ WORKDIR /app
 COPY / ./
 COPY package*.json ./
 
-RUN npm install -g @angular/cli@10.0.4 && \
+RUN npm install -g @angular/cli@12.0.5 && \
     npm install && \
     ng build
 COPY . .
