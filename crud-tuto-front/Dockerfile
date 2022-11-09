@@ -4,9 +4,10 @@ COPY / ./
 COPY package*.json ./
 
 RUN npm install -g @angular/cli@12.0.5 && \
-    npm install && \
-    ng build
+    npm install 
+    
 COPY . .
 FROM nginx:1.17.1-alpine
 WORKDIR /app
-COPY  /app/dist /usr/share/nginx/html
+RUN ng build
+COPY  /app/dist/crudtuto-Front /usr/share/nginx/html
