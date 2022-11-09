@@ -9,3 +9,6 @@ COPY . .
 FROM nginx:alpine
 RUN ng build
 RUN ng serve
+
+COPY --from=node /app/dist/crudtuto-Front /usr/share/nginx/html
+CMD ["npm","run","ng","serve"]
