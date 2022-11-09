@@ -1,12 +1,12 @@
-
-# Stage 1
-
-FROM node:16.3.0-alpine as node
+FROM node:12.7-alpine AS build
 WORKDIR /app
-COPY . .
+COPY / ./
+COPY package*.json ./
 
-# Stage 2
-FROM nginx:alpine
-RUN npm install
-RUN npm run ng build
-RUN npm run ng serve
+RUN npm install -g @angular/cli@10.0.4 && \
+    npm install && \
+    ng build
+COPY . .
+FROM nginx:1.17.1-alpine
+WORKDIR /app
+COPY --from=build /app/dist/crudtuto-Front /usr/share/nginx/html
