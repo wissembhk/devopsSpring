@@ -9,4 +9,4 @@ RUN npm install -g @angular/cli@12.0.5 && \
 COPY . .
 FROM nginx:1.17.1-alpine
 WORKDIR /app
-COPY --from=build /app/dist/crudtuto-Front /usr/share/nginx/html
+COPY  /app/dist/crudtuto-Front /usr/share/nginx/html
