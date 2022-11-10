@@ -3,12 +3,10 @@ WORKDIR /app
 COPY package*.json /app/
 RUN npm install
 COPY ./ /app/
-RUN node_modules/.bin/
-ng build --output-path=dist --prod=true
+RUN node_modules/.bin/ng build --output-path=dist --prod=true
 
 
     
 FROM nginx:1.17.1-alpine
-COPY default.conf /etc/nginx/conf.d/
-default.conf
+COPY default.conf /etc/nginx/conf.d/default.conf
 COPY  --from=build /app/dist /usr/share/nginx/html
