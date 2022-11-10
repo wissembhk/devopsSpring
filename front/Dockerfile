@@ -1,6 +1,6 @@
 # Build Stage
 FROM node:12.20-alpine AS build
-EXPOSE 8089
+EXPOSE 4200
 WORKDIR /app
 COPY package*.json /app/
 RUN npm install 
