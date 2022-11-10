@@ -1,5 +1,4 @@
-
-a
+docker logs --tail 50 --follow --timestamps
 b
 d
 f
