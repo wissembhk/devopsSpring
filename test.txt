@@ -1,1 +1,1 @@
-docker logs --tail 50 --follow --timestamps 103673e80bd7
+docker logs --tail 50 --follow --timestamps fff9df39bc1d
