@@ -28,6 +28,14 @@ public class ProduitRestController {
 		return list;
 	}
 
+	@GetMapping("/sayhii")
+	@ResponseBody
+	public int getProduits() {
+		
+		return 3;
+	}
+
+
 	// http://localhost:8089/SpringMVC/produit/retrieve-produit/8
 	@GetMapping("/retrieve-produit/{produit-id}")
 	@ResponseBody
