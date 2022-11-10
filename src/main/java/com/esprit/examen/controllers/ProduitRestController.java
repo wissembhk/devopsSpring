@@ -30,7 +30,7 @@ public class ProduitRestController {
 
 	@GetMapping("/sayhii")
 	@ResponseBody
-	public int getProduits() {
+	public int hii() {
 		
 		return 3;
 	}
