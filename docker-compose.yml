@@ -37,4 +37,4 @@ services:
     tty: true
 
 volumes:
-  mysqldb:
+  db:
