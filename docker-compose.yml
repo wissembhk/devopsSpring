@@ -16,10 +16,10 @@ services:
     depends_on:
       - mysqldb
     build:
-      context: "spring"
-      dockerfile: "./Dockerfile"
+      context: "./"
+      dockerfile: "Dockerfile"
     restart: on-failure
-    env_file: ./spring/.env
+    env_file: ./.env
     ports:
       - 8089:8089
     environment:
@@ -33,12 +33,6 @@ services:
       - .m2:/root/.m2
     stdin_open: true
     tty: true
-  angular:
-    build: 
-      context : "front"
-      dockerfile: "./Dockerfile"
-    container_name: angular
-    ports:
-      - 4200:4200
+  
 volumes:
   db:
