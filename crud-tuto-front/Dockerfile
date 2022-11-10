@@ -1,13 +1,14 @@
 FROM node:12.14-alpine AS build
 WORKDIR /app
-COPY / ./
-COPY package*.json ./
+COPY package*.json /app/
+RUN npm install
+COPY ./ /app/
+RUN node_modules/.bin/
+ng build --output-path=dist --prod=true
 
-RUN npm install -g @angular/cli@12.0.5 && \
-    npm install 
+
     
-COPY . .
 FROM nginx:1.17.1-alpine
-WORKDIR /app
-RUN ls /app
-COPY  ./test.html /usr/share/nginx/html
+COPY default.conf /etc/nginx/conf.d/
+default.conf
+COPY  --from=build /app/dist /usr/share/nginx/html
