@@ -25,7 +25,7 @@ class SecteurActiviteImplTest {
     SecteurActiviteServiceImpl Service;
 
     SecteurActivite secteurActivite = SecteurActivite.builder().codeSecteurActivite("secteur").libelleSecteurActivite("lib").build();
-    List<SecteurActivite> listSecteurActivite = new ArrayList<SecteurActivite>() {
+    List<SecteurActivite> listSecteurActivites = new ArrayList<SecteurActivite>() {
         {
             add(SecteurActivite.builder().codeSecteurActivite("secteur1").libelleSecteurActivite("lib1").build());
             add(SecteurActivite.builder().codeSecteurActivite("secteur2").libelleSecteurActivite("lib2").build());
