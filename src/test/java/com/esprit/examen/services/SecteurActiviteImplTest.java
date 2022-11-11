@@ -40,23 +40,7 @@ class SecteurActivite {
         Assertions.assertNotNull(s1);
     }
 
-    @Test
-    void testAllRetrieveSecteurActivite() {
-        Mockito.when(Repo.findAll()).thenReturn(SecteurActivite);
-        List<SecteurActivite> lSecteurActivite = Service.retrieveAllSecteurActivites();
-        Assertions.assertNotNull(lSecteurActivite);
-    }
-
-    @Test
-    void testAddstock() {
-        Mockito.when(Repo.save(SecteurActivite)).thenReturn(SecteurActivite);
-        SecteurActivite s1 = Service.addSecteurActivite(SecteurActivite);
-        Assertions.assertNotNull(s1);
-
-    }
-
-   
-
+  
    
 
 
