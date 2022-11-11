@@ -24,11 +24,11 @@ class SecteurActivite {
     @InjectMocks
     SecteurActiviteServiceImpl Service;
 
-    SecteurActivite SecteurActivite = SecteurActivite.builder().idSecteurActivite(1).qte(100).codeSecteurActivite("11F").libelleSecteurActivite('aa').build();
+    SecteurActivite secteurActivite = SecteurActivite.builder().idSecteurActivite(1).qte(100).codeSecteurActivite("11F").libelleSecteurActivite("aa").build();
     List<Stock> listStocks = new ArrayList<Stock>() {
         {
-            add(SecteurActivite.builder().idSecteurActivite(12).qte(1000).codeSecteurActivite("111F").libelleSecteurActivite('bb').build());
-            add(SecteurActivite.builder().idSecteurActivite(12).qte(1000).codeSecteurActivite("1111F").libelleSecteurActivite('cc').build());
+            add(SecteurActivite.builder().idSecteurActivite(12).qte(1000).codeSecteurActivite("111F").libelleSecteurActivite("bb").build());
+            add(SecteurActivite.builder().idSecteurActivite(12).qte(1000).codeSecteurActivite("1111F").libelleSecteurActivite("cc").build());
         }
     };
 
