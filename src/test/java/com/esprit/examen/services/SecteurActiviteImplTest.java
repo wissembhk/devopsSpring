@@ -37,7 +37,7 @@ class SecteurActiviteImplTest {
     void testRetrieveSecteurActivite() {
         Mockito.when(Repo.findById(Mockito.anyLong())).thenReturn(Optional.of(secteurActivite));
         @SuppressWarnings("removal")
-        Stock s1 = Service.retrieveSecteurActivite(new Long(2));
+        SecteurActivite s1 = Service.retrieveSecteurActivite(new Long(2));
         Assertions.assertNotNull(s1);
     }
 
