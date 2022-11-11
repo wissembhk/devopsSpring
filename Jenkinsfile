@@ -91,7 +91,7 @@ pipeline
                   // sh 'docker build -t wissembhk/project .'
                 }
             }
-        }
+        } 
         stage("Login to DockerHub") {
                 steps{
 
