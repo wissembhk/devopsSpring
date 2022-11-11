@@ -38,7 +38,7 @@ class SecteurActiviteImplTest {
     void testAllRetrievesecteurActivite() {
         Mockito.when(Repo.findAll()).thenReturn(listSecteurActivites);
         List<SecteurActivite> lSecteurActivite = Service.retrieveAllSecteurActivite();
-        Assertions.assertNotNull(lSecteurActivites);
+        Assertions.assertNotNull(lSecteurActivite);
     }
 
     @Test
