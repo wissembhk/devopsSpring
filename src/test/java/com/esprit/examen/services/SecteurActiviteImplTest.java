@@ -44,7 +44,7 @@ class SecteurActiviteImplTest {
     @Test
     void testAddsecteurActivite() {
         Mockito.when(Repo.save(secteurActivite)).thenReturn(secteurActivite);
-        SecteurActivite s1 = Service.addStock(stock);
+        SecteurActivite s1 = Service.addSecteurActivite(secteurActivite);
         Assertions.assertNotNull(s1);
 
     }
